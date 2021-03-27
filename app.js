@@ -1,39 +1,15 @@
-// Logo
-const myLogo = '<DivyAnsh/>';
 
-const logo = document.querySelector('.logo');
+const burger = document.querySelector(".burger");
 
-const heading = document.createElement('h1');
+const sidebar = document.querySelector('.sidebar');
 
-heading.append(myLogo);
-
-logo.append(heading);
-
-// burger
-const burger = document.querySelector('.burger');
-
-// navbar
-const navbar = document.querySelector('.navbar');
-
-// navLinks
-const navLinks = document.querySelectorAll('.navbar li');
-
-console.log(navLinks);
-
+const closeBtn = document.querySelector('#closeBtn');
 
 // burger event
 burger.addEventListener('click', () => {
+    sidebar.classList.toggle('sidebar-close');
+})
 
-    navbar.classList.toggle('navbar-active');
-
-    burger.classList.toggle('burger-active')
-
-    navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `fadeInLinks 0.3s ease-in forwards ${index / 7 + 0.3}s`;
-        }
-    })
-
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('sidebar-close');
 })
